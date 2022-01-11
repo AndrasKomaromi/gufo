@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://github.com/AndrasKomaromi/philosophy-models/aristotle-gufo"
+     xml:base="https://raw.githubusercontent.com/philosophy-models/gufo/main/aristotle-gufo"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://github.com/AndrasKomaromi/philosophy-models/aristotle-gufo">
+     ontologyIRI="https://raw.githubusercontent.com/philosophy-models/gufo/main/aristotle-gufo">
     <Prefix name="" IRI="https://github.com/AndrasKomaromi/philosophy-models/aristotle-gufo"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>

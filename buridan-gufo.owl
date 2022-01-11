@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://github.com/AndrasKomaromi/philosophy-models/buridan-gufo"
+     xml:base="https://raw.githubusercontent.com/philosophy-models/gufo/main/buridan-gufo.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://github.com/AndrasKomaromi/philosophy-models/buridan-gufo">
+     ontologyIRI="https://raw.githubusercontent.com/philosophy-models/gufo/main/buridan-gufo.owl">
     <Prefix name="" IRI="https://github.com/AndrasKomaromi/philosophy-models/buridan-gufo"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -1777,6 +1777,18 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#termRefersToSuppositum"/>
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#categorematicConceptSignifiesUltimatelyObject"/>
         <Class IRI="#CategorematicConcept"/>
     </ObjectPropertyDomain>
@@ -1968,6 +1980,18 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#tokenTypeSubordinatedToConcept"/>
         <Class IRI="#TokenType"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#categorematicConceptSignifiesUltimatelyObject"/>
         <Class IRI="#Object"/>
