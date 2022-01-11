@@ -1,2 +1,2 @@
 # gufo
-Notes on Philosophy Presented in OWL BFO and GUFO codes 
+Notes on Philosophy Presented in OWL/GUFO codes 
