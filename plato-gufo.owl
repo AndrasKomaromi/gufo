@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://raw.githubusercontent.com/philosophy-models/gufo/main/plato-gufo.owl">
-    <Prefix name="" IRI="https://raw.githubusercontent.com/AndrasKomaromi/philosophy-models/main/plato-gufo"/>
+    <Prefix name="" IRI="https://raw.githubusercontent.com/philosophy-models/gufo/main/plato-gufo.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -284,6 +284,9 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="gufo:mediates"/>
     </Declaration>
     <Declaration>
@@ -359,7 +362,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#educationProvidedToCitizen"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsComponentOfParticular"/>
+        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsProperPartOfParticular"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#formIsBeingEssence"/>
@@ -1058,7 +1061,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     <SubClassOf>
         <Class IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Element"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsComponentOfParticular"/>
+            <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsProperPartOfParticular"/>
             <Class IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Particular"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -2092,8 +2095,8 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsComponentOfParticular"/>
-        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsProperPartOfParticular"/>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#formIsComponentOfParticular"/>
@@ -2356,7 +2359,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Education"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsComponentOfParticular"/>
+        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsProperPartOfParticular"/>
         <Class IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Element"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2632,7 +2635,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Citizen"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsComponentOfParticular"/>
+        <ObjectProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsProperPartOfParticular"/>
         <Class IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Particular"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -3031,6 +3034,11 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <DataProperty IRI="https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#temporal_1"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:isProperPartOf</AbbreviatedIRI>
+        <Literal xml:lang="en">isObjecProperPartOf</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#Air</IRI>
@@ -3926,8 +3934,8 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsComponentOfParticular</IRI>
-        <Literal xml:lang="en">isComponentOf</Literal>
+        <IRI>https://github.com/AndrasKomaromi/philosophy-models/plato-gufo#elementIsProperPartOfParticular</IRI>
+        <Literal xml:lang="en">isProperPartOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="gufo:isDerivedFrom"/>
