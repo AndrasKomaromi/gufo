@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://raw.githubusercontent.com/philosophy-models/gufo/main/aristotle-gufo">
-    <Prefix name="" IRI="https://github.com/AndrasKomaromi/philosophy-models/aristotle-gufo"/>
+    <Prefix name="" IRI="https://raw.githubusercontent.com/philosophy-models/gufo/main/aristotle-gufo"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -650,6 +650,9 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="gufo:isSubQuantityOf"/>
     </Declaration>
     <Declaration>
@@ -657,9 +660,6 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#PrimeMatterIsSubQuantityOfWater"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#activeIntellectHasIntelligibleForm"/>
@@ -794,7 +794,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#formIsFormalCause"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#formedMatterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#formedMatterIsProperPartOfOfObject"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#goalIsFinalCause"/>
@@ -839,7 +839,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#matterIsMaterialCause"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#matterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#matterIsisProperPartOfObject"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#meanIsEfficientCause"/>
@@ -1016,10 +1016,10 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#subjectIsComponentOfAssertion"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#sublunaryMatterIsisProperPartOfSublunaryBody"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfSublunaryBody"/>
+        <ObjectProperty IRI="#sublunaryMatterisProperPartOfObject"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#subordinateGoalIsHealth"/>
@@ -2598,7 +2598,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     <SubClassOf>
         <Class IRI="#FormedMatter"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#formedMatterIsSubQuantityOfObject"/>
+            <ObjectProperty IRI="#formedMatterIsProperPartOfOfObject"/>
             <Class IRI="#Object"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -2835,7 +2835,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     <SubClassOf>
         <Class IRI="#Matter"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#matterIsSubQuantityOfObject"/>
+            <ObjectProperty IRI="#matterIsisProperPartOfObject"/>
             <Class IRI="#Object"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -3006,7 +3006,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#Object"/>
         <ObjectSomeValuesFrom>
             <ObjectInverseOf>
-                <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfObject"/>
+                <ObjectProperty IRI="#sublunaryMatterisProperPartOfObject"/>
             </ObjectInverseOf>
             <Class IRI="#SublunaryMatter"/>
         </ObjectSomeValuesFrom>
@@ -3314,13 +3314,6 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     <SubClassOf>
         <Class IRI="#PrimeMatter"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#PrimeMatterIsSubQuantityOfWater"/>
-            <Class IRI="#Water"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PrimeMatter"/>
-        <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#primeMatterIsSubQuantityOfAir"/>
             <Class IRI="#Air"/>
         </ObjectExactCardinality>
@@ -3524,7 +3517,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#SublunaryBody"/>
         <ObjectSomeValuesFrom>
             <ObjectInverseOf>
-                <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfSublunaryBody"/>
+                <ObjectProperty IRI="#sublunaryMatterIsisProperPartOfSublunaryBody"/>
             </ObjectInverseOf>
             <Class IRI="#SublunaryMatter"/>
         </ObjectSomeValuesFrom>
@@ -3536,15 +3529,15 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     <SubClassOf>
         <Class IRI="#SublunaryMatter"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfObject"/>
-            <Class IRI="#Object"/>
+            <ObjectProperty IRI="#sublunaryMatterIsisProperPartOfSublunaryBody"/>
+            <Class IRI="#SublunaryBody"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SublunaryMatter"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfSublunaryBody"/>
-            <Class IRI="#SublunaryBody"/>
+            <ObjectProperty IRI="#sublunaryMatterisProperPartOfObject"/>
+            <Class IRI="#Object"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -3783,15 +3776,6 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     <SubClassOf>
         <Class IRI="#Water"/>
         <Class IRI="#Element"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Water"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty IRI="#PrimeMatterIsSubQuantityOfWater"/>
-            </ObjectInverseOf>
-            <Class IRI="#PrimeMatter"/>
-        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WeakPerson"/>
@@ -4869,10 +4853,6 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <NamedIndividual IRI="/perception#TouchPerception"/>
     </ClassAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#PrimeMatterIsSubQuantityOfWater"/>
-        <ObjectProperty abbreviatedIRI="gufo:isSubQuantityOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#activeIntellectHasIntelligibleForm"/>
         <ObjectProperty IRI="#has"/>
     </SubObjectPropertyOf>
@@ -5025,8 +5005,8 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#is"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#formedMatterIsSubQuantityOfObject"/>
-        <ObjectProperty abbreviatedIRI="gufo:isSubQuantityOf"/>
+        <ObjectProperty IRI="#formedMatterIsProperPartOfOfObject"/>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#goalIsFinalCause"/>
@@ -5077,8 +5057,8 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#is"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#matterIsSubQuantityOfObject"/>
-        <ObjectProperty abbreviatedIRI="gufo:isSubQuantityOf"/>
+        <ObjectProperty IRI="#matterIsisProperPartOfObject"/>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#meanIsEfficientCause"/>
@@ -5269,12 +5249,12 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfObject"/>
-        <ObjectProperty abbreviatedIRI="gufo:isSubQuantityOf"/>
+        <ObjectProperty IRI="#sublunaryMatterIsisProperPartOfSublunaryBody"/>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfSublunaryBody"/>
-        <ObjectProperty abbreviatedIRI="gufo:isSubQuantityOf"/>
+        <ObjectProperty IRI="#sublunaryMatterisProperPartOfObject"/>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#subordinateGoalIsHealth"/>
@@ -6042,7 +6022,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#Form"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#formedMatterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#formedMatterIsProperPartOfOfObject"/>
         <Class IRI="#FormedMatter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -6098,7 +6078,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#Matter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#matterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#matterIsisProperPartOfObject"/>
         <Class IRI="#Matter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -6322,11 +6302,11 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#Subject"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#sublunaryMatterIsisProperPartOfSublunaryBody"/>
         <Class IRI="#SublunaryMatter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfSublunaryBody"/>
+        <ObjectProperty IRI="#sublunaryMatterisProperPartOfObject"/>
         <Class IRI="#SublunaryMatter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -6594,7 +6574,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#FormalCause"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#formedMatterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#formedMatterIsProperPartOfOfObject"/>
         <Class IRI="#Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -6650,7 +6630,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#MaterialCause"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#matterIsSubQuantityOfObject"/>
+        <ObjectProperty IRI="#matterIsisProperPartOfObject"/>
         <Class IRI="#Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -6870,12 +6850,12 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#Assertion"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfObject"/>
-        <Class IRI="#Object"/>
+        <ObjectProperty IRI="#sublunaryMatterIsisProperPartOfSublunaryBody"/>
+        <Class IRI="#SublunaryBody"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#sublunaryMatterIsSubQuantityOfSublunaryBody"/>
-        <Class IRI="#SublunaryBody"/>
+        <ObjectProperty IRI="#sublunaryMatterisProperPartOfObject"/>
+        <Class IRI="#Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#superiorGenusgenusIsSuperiorGenus"/>
@@ -8972,11 +8952,6 @@ Prime matter is usually described as pure potentiality, unformed.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PrimeMatterIsSubQuantityOfWater</IRI>
-        <Literal xml:lang="en">isSubQuantityOf</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ProductiveSciences</IRI>
         <Literal xml:lang="en">ProductiveSciences</Literal>
     </AnnotationAssertion>
@@ -9598,8 +9573,8 @@ Thinking: &apos;the active intellect makes things thinkable by making them actua
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#formedMatterIsSubQuantityOfObject</IRI>
-        <Literal xml:lang="en">isSubquantityOf</Literal>
+        <IRI>#formedMatterIsProperPartOfOfObject</IRI>
+        <Literal xml:lang="en">isProperPartOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -9663,8 +9638,8 @@ Thinking: &apos;the active intellect makes things thinkable by making them actua
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#matterIsSubQuantityOfObject</IRI>
-        <Literal xml:lang="en">isSubquantityOf</Literal>
+        <IRI>#matterIsisProperPartOfObject</IRI>
+        <Literal xml:lang="en">isProperPartOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -9943,13 +9918,13 @@ Thinking: &apos;the active intellect makes things thinkable by making them actua
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#sublunaryMatterIsSubQuantityOfObject</IRI>
-        <Literal xml:lang="en">isSubquantityOf</Literal>
+        <IRI>#sublunaryMatterIsisProperPartOfSublunaryBody</IRI>
+        <Literal xml:lang="en">isProperPartOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#sublunaryMatterIsSubQuantityOfSublunaryBody</IRI>
-        <Literal xml:lang="en">isSubquantityOf</Literal>
+        <IRI>#sublunaryMatterisProperPartOfObject</IRI>
+        <Literal xml:lang="en">isProperPartOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
