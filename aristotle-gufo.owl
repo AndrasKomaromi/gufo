@@ -806,6 +806,9 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#goodLifeIsFinalCause"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hapinessInheresInHuman"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#happinessIsVirtuousActivity"/>
     </Declaration>
     <Declaration>
@@ -2657,7 +2660,14 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Happiness"/>
-        <Class abbreviatedIRI="gufo:AbstractIndividual"/>
+        <Class abbreviatedIRI="gufo:IntrinsicMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Happiness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hapinessInheresInHuman"/>
+            <Class IRI="#Person"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Happiness"/>
@@ -3330,6 +3340,13 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#primeMatterIsSubQuantityOfFire"/>
             <Class IRI="#Fire"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrimeMatter"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#primeMatterIsSubQuantityOfWater"/>
+            <Class IRI="#Water"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -5021,6 +5038,10 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <ObjectProperty IRI="#is"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hapinessInheresInHuman"/>
+        <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#happinessIsVirtuousActivity"/>
         <ObjectProperty IRI="#is"/>
     </SubObjectPropertyOf>
@@ -6038,12 +6059,20 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#GoodLife"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hapinessInheresInHuman"/>
+        <Class IRI="#Happiness"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#happinessIsVirtuousActivity"/>
         <Class IRI="#Happiness"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#healthInheresInPerson"/>
+        <Class IRI="#Health"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#highestGoalIsHappiness"/>
@@ -6590,12 +6619,20 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0</L
         <Class IRI="#FinalCause"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hapinessInheresInHuman"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#happinessIsVirtuousActivity"/>
         <Class IRI="#VirtuousActivity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#healthInheresInPerson"/>
+        <Class IRI="#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#highestGoalIsHappiness"/>
@@ -9590,6 +9627,11 @@ Thinking: &apos;the active intellect makes things thinkable by making them actua
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#goodLifeIsFinalCause</IRI>
         <Literal xml:lang="en">is</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hapinessInheresInHuman</IRI>
+        <Literal xml:lang="en">inheresIn</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
