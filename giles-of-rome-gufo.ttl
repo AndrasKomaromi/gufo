@@ -1,0 +1,281 @@
+@prefix : <http://example.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/philosophy-models/gufo/main/giles-of-rome-gufo.owl> .
+
+<https://raw.githubusercontent.com/philosophy-models/gufo/main/giles-of-rome-gufo.owl> rdf:type owl:Ontology ;
+                                                                                        owl:imports <http://purl.org/nemo/gufo#/1.0.0> ;
+                                                                                        rdfs:comment """Sources:
+(1) Lambertini, Roberto, “Giles of Rome”, The Stanford Encyclopedia of Philosophy (Winter 2019 Edition), Edward N. Zalta (ed.)"""@en ,
+                                                                                                     """author: András L. Komáromi
+This work is distributed under Creative Commons Attribution License CC BY 4.0"""@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.com#delegates
+:delegates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Pope ;
+           rdfs:range :Jurisdiction ;
+           rdfs:label "delegates"@en .
+
+
+###  http://example.com#holds
+:holds rdf:type owl:ObjectProperty ;
+       rdfs:domain :Pope ;
+       rdfs:range :Power ;
+       rdfs:label "holds"@en .
+
+
+###  http://example.com#legitimates
+:legitimates rdf:type owl:ObjectProperty ;
+             rdfs:domain :Pope ;
+             rdfs:range :Property ;
+             rdfs:label "legitimates"@en .
+
+
+###  http://example.com#owns
+:owns rdf:type owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Thing .
+
+
+###  http://example.com#rules
+:rules rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Sovereign ;
+       rdfs:range :Person .
+
+
+###  http://purl.org/nemo/gufo#mediates
+gufo:mediates rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.com#Church
+:Church rdf:type owl:Class ;
+        rdfs:subClassOf gufo:VariableCollection .
+
+
+###  http://example.com#Jurisdiction
+:Jurisdiction rdf:type owl:Class ;
+              rdfs:subClassOf :Power ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty gufo:mediates ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Person
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty gufo:mediates ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Power
+                              ] .
+
+
+###  http://example.com#Mankind
+:Mankind rdf:type owl:Class ;
+         rdfs:subClassOf gufo:VariableCollection .
+
+
+###  http://example.com#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf gufo:FunctionalComplex ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf gufo:mediates
+                                         ] ;
+                          owl:someValuesFrom :Property
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf gufo:mediates
+                                         ] ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Jurisdiction
+                        ] .
+
+
+###  http://example.com#Pope
+:Pope rdf:type owl:Class ;
+      rdfs:subClassOf :Sovereign .
+
+
+###  http://example.com#Power
+:Power rdf:type owl:Class ;
+       rdfs:subClassOf gufo:Relator ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf gufo:mediates
+                                        ] ;
+                         owl:someValuesFrom :Jurisdiction
+                       ] .
+
+
+###  http://example.com#Property
+:Property rdf:type owl:Class ;
+          rdfs:subClassOf :Power ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty gufo:mediates ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Person
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf gufo:mediates
+                                           ] ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Thing
+                          ] .
+
+
+###  http://example.com#Sovereign
+:Sovereign rdf:type owl:Class ;
+           rdfs:subClassOf :Person .
+
+
+###  http://example.com#Thing
+:Thing rdf:type owl:Class ;
+       rdfs:subClassOf gufo:FunctionalComplex ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty gufo:mediates ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Property
+                       ] .
+
+
+###  http://purl.org/nemo/gufo#FunctionalComplex
+gufo:FunctionalComplex rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Kind
+gufo:Kind rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#MaterialRelationshipType
+gufo:MaterialRelationshipType rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Relator
+gufo:Relator rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Role
+gufo:Role rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#SubKind
+gufo:SubKind rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#VariableCollection
+gufo:VariableCollection rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.com#Church
+:Church rdf:type owl:NamedIndividual ,
+                 gufo:Kind .
+
+
+###  http://example.com#Jurisdiction
+:Jurisdiction rdf:type owl:NamedIndividual ,
+                       gufo:SubKind .
+
+
+###  http://example.com#Mankind
+:Mankind rdf:type owl:NamedIndividual ,
+                  gufo:Kind .
+
+
+###  http://example.com#Person
+:Person rdf:type owl:NamedIndividual ,
+                 gufo:Kind .
+
+
+###  http://example.com#Pope
+:Pope rdf:type owl:NamedIndividual ,
+               gufo:Role .
+
+
+###  http://example.com#Power
+:Power rdf:type owl:NamedIndividual ,
+                gufo:Kind .
+
+
+###  http://example.com#Property
+:Property rdf:type owl:NamedIndividual ,
+                   gufo:SubKind .
+
+
+###  http://example.com#Sovereign
+:Sovereign rdf:type owl:NamedIndividual ,
+                    gufo:Role .
+
+
+###  http://example.com#Thing
+:Thing rdf:type owl:NamedIndividual ,
+                gufo:Kind .
+
+
+###  http://example.com#owns
+:owns rdf:type owl:NamedIndividual ,
+               gufo:MaterialRelationshipType .
+
+
+###  http://example.com#rules
+:rules rdf:type owl:NamedIndividual ,
+                gufo:MaterialRelationshipType .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Church rdfs:label "Church"@en .
+
+
+:Jurisdiction rdfs:comment "Power on persons exercised as JURISDICTION"@en ;
+              rdfs:label "Jurisdiction"@en .
+
+
+:Mankind rdfs:label "Mankind"@en .
+
+
+:Person rdfs:comment "A human PERSON"@en ;
+        rdfs:label "Person"@en .
+
+
+:Pope rdfs:comment "“the POPE, supreme authority of the Church but also of the whole of mankind, is the only legitimate origin of every power on earth, be it exercised — as jurisdiction — on persons, or — as property — on things. In his plenitude of power, the pope possesses an absolute supremacy both in the ecclesiastical and in the temporal sphere, and delegates the exercise of the temporal “sword” to lay sovereigns only in order to fulfill most properly his higher religious duties.”"@en ;
+      rdfs:label "Pope"@en .
+
+
+:Power rdfs:comment "“Any authority that does not recognize its dependence on the papal   POWER is but usurpation. In Giles’ view, there is no space even for a partially autonomous temporal order.”"@en ;
+       rdfs:label "Power"@en .
+
+
+:Property rdfs:label "Property"@en ;
+          rdfs:comment """PROPERTY is power exercised on things:
+“Coherently, Giles maintains that no property rights are valid if they are not legitimated by papal authority. Interestingly enough, such a claim is also supported by his account of the origin of property, according to which property is not a natural institution, but only the consequence of human agreements, which lack any legitimacy unless they are recognized by the supreme religious power“"""@en .
+
+
+:Sovereign rdfs:comment "SOVEREIGN  is who rules persons."@en ;
+           rdfs:label "Sovereign"@en .
+
+
+:Thing rdfs:label "Thing"@en .
+
+
+:owns rdfs:label "owns"@en .
+
+
+:rules rdfs:label "rules"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
